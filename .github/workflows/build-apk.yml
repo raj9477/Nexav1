@@ -18,7 +18,7 @@ jobs:
 
       - name: Extract Nexa project
         run: |
-          unzip Nexa_Cloud_Build.zip -d extracted
+          unzip .github/workflows/Nexa_Cloud_Build.zip -d extracted
           cd extracted/Nexa_Starter
           echo "PROJECT_DIR=$PWD" >> $GITHUB_ENV
 
