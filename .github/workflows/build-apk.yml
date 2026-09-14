@@ -29,8 +29,10 @@ jobs:
           java-version: '21'
 
       - name: Install dependencies
-        working-directory: ${{ env.PROJECT_DIR }}
-        run: npm install
+  working-directory: ${{ env.PROJECT_DIR }}
+  run: |
+    npm install
+    sed -i '/onend: (() => void) | null;/a\  onstart: (() => void) | null;' src/services/VoiceService.ts
 
       - name: Install Capacitor Android
         working-directory: ${{ env.PROJECT_DIR }}
